@@ -6,11 +6,16 @@ export class Welcome extends React.Component{
         return(
             <div>
                 <p>Welcome, {this.props.name}</p>
-                <Age age= {this.props.age}></Age>
+                {this.props.age >= 18 && <Age age= {this.props.age}></Age>}
             </div>
         )
     }
 }
+
+
+
+
+
 
 
 //N.B. PROPS-02:

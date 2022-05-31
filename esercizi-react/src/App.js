@@ -4,7 +4,7 @@ import {Counter} from './Counter'
 export class App extends React.Component {
   render() { 
     return (
-      <Counter></Counter>
+      <Counter initialValue= {10} increment = {20} interval = {6000}></Counter>
     );
   }
 }

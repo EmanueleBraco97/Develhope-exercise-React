@@ -6,18 +6,22 @@ export class Counter extends React.Component {
         count: this.props.initialValue,
      } 
 
-     constructor(props){
-         super(props)
-
-        setInterval(() => {
+     componentDidMount(){
+        this._interval =  setInterval(() => {
             this.setState((state) => {
                 return{
                     count: state.count + this.props.increment,
                 }
             })
         }, this.props.interval);
+        if(this._interval){
+            clearInterval(this._interval)
+        }
+    }
 
-     }
+    //Come possiamo vedere dalle varie prove fatte, non abbiamo più bisogno del 'constructor'//
+
+
     render() { 
         return (
             <div>

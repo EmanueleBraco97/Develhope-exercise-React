@@ -16,7 +16,7 @@ export class TodoList extends React.Component {
 
   addInputToArray = () => {
     this.setState((state) => {
-      const arrayItems = [...state.arrayItems, state.value]
+      const arrayItems = [...state.arrayItems, state.value];
       return {
         arrayItems,
         value: "",
@@ -25,8 +25,19 @@ export class TodoList extends React.Component {
   };
 
   resetArray = () => {
-      this.setState({arrayItems : []})
-  }
+    this.setState({ arrayItems: [] });
+  };
+
+  removeLi = (item) => {
+      this.setState((state) => {
+        const arrayItems = state.arrayItems.filter(value => item !== value)
+        return {
+            arrayItems
+        }
+      })
+  };
+
+
 
   render() {
     return (
@@ -41,12 +52,19 @@ export class TodoList extends React.Component {
           <button type="button" onClick={this.addInputToArray}>
             Add
           </button>
-          <button type="button" onClick={this.resetArray}>Reset</button>
+          <button type="button" onClick={this.resetArray}>
+            Reset
+          </button>
         </div>
 
         <ul>
           {this.state.arrayItems.map((item) => (
-            <li key={item}>{item}</li>
+            <li key={item}>
+              {item}
+              <button type="button" onClick={this.removeLi.bind(this, item)}>
+                Remove
+              </button>
+            </li>
           ))}
         </ul>
       </div>

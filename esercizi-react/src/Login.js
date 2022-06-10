@@ -3,7 +3,7 @@ import React from 'react';
 export class Login extends React.Component {
     state = { 
         name:'',
-        password:'',
+        password: '',
         remember: false,
      } 
 
@@ -35,6 +35,11 @@ export class Login extends React.Component {
 
 
     render() { 
+
+        const LoginStyle = {
+            color: this.state.password.length < 8 ? 'red' : 'green'
+        }
+
         return (
             <div>
                 <div>
@@ -42,7 +47,7 @@ export class Login extends React.Component {
                 </div>
                 
                 <div>
-                    <button disabled = {!this.state.name || !this.state.password}>Login</button>
+                    <button style={LoginStyle}>Login</button>
                     <input type='text' name='name' value={this.state.name} onChange={this.handleInputChange}></input>
                     <input type='password' name= 'password' value={this.state.password} onChange={this.handleInputChange}></input>
                     <input type='checkbox' name='remember' checked= {this.state.remember} onChange= {this.handleCheckboxChange}></input>

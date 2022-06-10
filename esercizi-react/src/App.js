@@ -1,8 +1,8 @@
 import React from 'react';
-// import {Welcome} from './Welcome';
+import {Welcome} from './Welcome';
 // import { InteractiveWelcome } from './InteractiveWelcome';
 // import {Login} from './Login';
-import { UncontrolLogin } from './UncontrolLogin';
+// import { UncontrolLogin } from './UncontrolLogin';
 
 export class App extends React.Component {
     
@@ -14,10 +14,10 @@ export class App extends React.Component {
     render() { 
         return (
             <div>
-                {/* <Welcome></Welcome>
-                <InteractiveWelcome></InteractiveWelcome> */}
-                {/* <Login></Login> */}
-                <UncontrolLogin></UncontrolLogin>
+                <Welcome name ='emanuele'></Welcome>
+                {/* <InteractiveWelcome></InteractiveWelcome> 
+                <Login></Login>
+                <UncontrolLogin></UncontrolLogin> */}
             </div>
         );
     }

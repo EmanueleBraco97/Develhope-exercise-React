@@ -57,15 +57,11 @@ export class TodoList extends React.Component {
           </button>
         </div>
 
+
+
+            {/* passiamo al render l'array, e la funzione che abbiamo utilizzato per eliminare elemento */}
         <ul>
-          {this.state.arrayItems.map((item) => (
-            <li key={item}>
-              {item}
-              <button type="button" onClick={this.removeLi.bind(this, item)}>
-                Remove
-              </button>
-            </li>
-          ))}
+        {this.props.render(this.state.arrayItems, this.removeLi)}
         </ul>
       </div>
     );

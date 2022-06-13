@@ -4,8 +4,9 @@ import {Sum} from './Sum'
 export function App(){
         return (
             <div>
-                <Sum numbers={[7,9,13,27,14]}></Sum>
+                <Sum numbers={[]}></Sum>
             </div>
         );
     }
  
+// Function Components 03 = -SE NON SONO IMPOSTATI I NUMERI, LA SOMMA SARA' : "0"

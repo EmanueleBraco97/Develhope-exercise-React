@@ -1,8 +1,8 @@
 import React from 'react';
 
-export function Sum(props) {
+export function Sum({numbers= [7,14,15,24,10]}) {
     let sum = 0;
-    props.numbers.forEach(element => {
+    numbers.forEach(element => {
         sum+=element
     });
     return ( 
@@ -11,3 +11,6 @@ export function Sum(props) {
         </div>
      );
 }
+
+
+// Function Components 03 = -IN QUESTO MODO ASSEGNIAMO DEI VALORI PREDEFINITI

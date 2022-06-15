@@ -1,35 +1,35 @@
-import {useState} from 'react'
+import { useEffect, useState } from "react";
 
-export function ClickCounter({count = 0}){
-    const [counter, setCounter] = useState(count)
+export function ClickCounter(props) {
+  const [counter, setCounter] = useState(props.count);
 
-    function counterIncrement(){
-        setCounter(c => c+1)
-    }
-    
-    return(
-        <div>
-            <h3>Count: {counter}</h3>
-            <button onClick={counterIncrement}>Increment</button>
-        </div>
-    )
+  useEffect(
+    () => {
+        props.onCounterChange(counter);
+    },
+    [props, counter]
+  );
+
+  function counterIncrement() {
+    setCounter((c) => c + 1);
+  }
+
+  return (
+    <div>
+      <h3>Count: {counter}</h3>
+      <button onClick={counterIncrement}>Increment</button>
+    </div>
+  );
 }
-
-
-
-
-
-
-
 
 
 
 
 // import React from 'react';
 // export class ClickCounter extends React.Component {
-//     state = { 
+//     state = {
 //         count: 0
-//      } 
+//      }
 //      counterIncrement = () => {
 //          this.setState((state) => {
 //             return {
@@ -37,13 +37,12 @@ export function ClickCounter({count = 0}){
 //             }
 //          })
 //      }
-//     render() { 
+//     render() {
 //         return (
 //             <div>
 //                 <h3>Count: {this.state.count}</h3>
 //                 <button onClick = {this.counterIncrement}>Increment</button>
-//             </div>        
+//             </div>
 //         );
 //     }
 // }
- 

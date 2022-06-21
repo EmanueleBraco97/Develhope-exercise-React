@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import { FilteredList } from './FilteredList';
 
-function App() {
+export function App() {
+  const players = [
+    { name: 'Messi', id: 1, age: 34 },
+    { name: 'Gomes', id: 2, age: 16},
+    { name: 'Ronaldo', id: 3, age: 37 },
+    { name: 'Gavi', id: 4, age: 17 },
+    { name: 'Cavani', id: 5, age: 35}
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <FilteredList playersMaggiorenni={players}></FilteredList>
     </div>
   );
 }
-
-export default App;

@@ -1,17 +1,10 @@
-import React from 'react';
-import {Welcome} from './Welcome';
+import {Routes, Route} from 'react-router-dom';
+import {Welcome} from './Welcome'
 
-export class App extends React.Component {
-    onLogin = (state) => {
-        console.log(state)
-    }
-
-    render() { 
-        return (
-            <div>
-                <Welcome name ='emanuele'></Welcome>
-            </div>
-        );
-    }
+export function App(){
+    return( 
+            <Routes>
+                <Route path='/' element={<Welcome name='emanuele'></Welcome>}></Route>
+            </Routes>     
+    )
 }
- 

@@ -9,38 +9,24 @@ export function App() {
     <>
       <Routes>
         <Route path="/" element={<Welcome name="emanuele"></Welcome>}></Route>
-        <Route
-          path="/ClickCounter"
-          element={<ClickCounter></ClickCounter>}
-        ></Route>
+        <Route path="/ClickCounter" element={<ClickCounter></ClickCounter>}></Route>
         <Route path="/users" element={<GithubUserList></GithubUserList>}>
-          <Route
-            path=":username"
-            element={<ShowGithubUser></ShowGithubUser>}
-          ></Route>
+          <Route index element={<p><strong>Add a user and select it</strong></p>}></Route>
+          <Route path=":username" element={<ShowGithubUser></ShowGithubUser>}></Route>
         </Route>
 
-        <Route
-          path="*"
-          element={
+        <Route path="*" element={
             <div>
               <p>Not Found</p>
               <Link to="/">Return to Home</Link>
             </div>
-          }
-        ></Route>
+          }></Route>
+
       </Routes>
 
-      <h1>
-        <Link to="/">Enter to Welcome</Link>
-      </h1>
-      <h2>
-        <Link to="/ClickCounter">Enter to ClickCounter</Link>
-      </h2>
-
-      <h3>
-        <Link to="/users">Username</Link>
-      </h3>
+      <h1><Link to="/">Enter to Welcome</Link></h1>
+      <h2><Link to="/ClickCounter">Enter to ClickCounter</Link></h2>
+      <h3><Link to="/users">Username</Link></h3>
     </>
   );
 }

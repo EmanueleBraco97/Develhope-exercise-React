@@ -1,4 +1,3 @@
-import { GithubUser } from './GithubUser'
 import { useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 
@@ -24,16 +23,14 @@ export function GithubUserList(){
             <button onClick={addUsername}>Add</button>
 
             {
-                usernames.map((username) => (
-                    <GithubUser username={username}></GithubUser>
+                usernames.map((username,i) => (
+                    <Link key={i} to={username}>
+                        User: {username}
+                    </Link>
                 ))
             }
 
             <h2>All List User</h2>
-
-            <ul>
-                <li><Link to='emanuelebraco97'>Utente 1</Link></li>
-            </ul>
 
             <hr></hr>
 

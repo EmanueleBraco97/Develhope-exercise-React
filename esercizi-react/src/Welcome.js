@@ -1,13 +1,29 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 export function Welcome(props){
+    const navigate = useNavigate()
+
+    function handleLoginButtonClick(){
+        navigate('/HookLoginForm')
+    }
+
+
     return(
         <div className='welcome'>
             <h1>Hello, {props.name}</h1>
+            <button onClick={handleLoginButtonClick}>enter the app</button>
         </div>
     )
 }
+
+
+
+
+
+
+
 
 
 

@@ -10,6 +10,9 @@ export function App() {
         <Route path="/" element={<Welcome name="emanuele"></Welcome>}></Route>
         <Route path="/ClickCounter" element={<ClickCounter></ClickCounter>}></Route>
         <Route path="/users/:username" element={<ShowGithubUser></ShowGithubUser>}></Route>
+        <Route path="*" element={<div><p>Not Found</p>
+          <Link to="/">Return to Home</Link>
+        </div>}></Route>
       </Routes>
 
       <h1><Link to="/">Enter to Welcome</Link></h1>

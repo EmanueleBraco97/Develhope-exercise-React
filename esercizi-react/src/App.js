@@ -1,11 +1,18 @@
-import { GitHubUser } from "./GitHubUser";
+import { Routes, Route, Link } from "react-router-dom";
+import { UseGitHubUsers } from "./UseGitHubUsers";
+import {Welcome} from "./Welcome";
 
 export function App() {
   return (
-    <div>
-      <GitHubUser username='emanuelebraco97'></GitHubUser>
-    </div>
+    <>
+      <h1>
+       <Link to='/'>Home</Link> | <Link to="users">Users</Link>
+      </h1>
+
+      <Routes>
+        <Route path="/" element={<Welcome></Welcome>}></Route>
+        <Route path="/users" element={<UseGitHubUsers username='emanuelebraco97'></UseGitHubUsers>}></Route>
+      </Routes>
+    </>
   );
 }
-
-

@@ -1,14 +1,16 @@
-import { useGitHubUser } from "./useGitHubUser";
+import { UseGitHubUsers } from "./UseGitHubUsers";
 
 export function GitHubUser({ username }) {
-  const { data } = useGitHubUser(username);
-
-  return (
+  const { data, error, isLoading } = UseGitHubUsers(username);
+  
+  
+  return(
     <div>
-      {data && <h1>Id utente è: {data.id}</h1>}
-      {data && <h1>Nome utente è: {data.name}</h1>}
-      {data && <h1>Nome Login utente è: {data.login}</h1>}
-      {data && <h1>Città dell'utente è: {data.location}</h1>}
-    </div>
-  );
+      {isLoading && <h2>Loading...</h2>}
+      {error && <h2>There are an Error</h2>}
+      {data && <h2>{data.name}</h2>}
+    </div>   
+  )   
 }
+   
+

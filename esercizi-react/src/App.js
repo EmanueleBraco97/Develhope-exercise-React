@@ -11,7 +11,7 @@ export function App() {
 
       <Routes>
         <Route path="/" element={<Welcome></Welcome>}></Route>
-        <Route path="/users" element={<UseGitHubUsers username='emanuelebraco97'></UseGitHubUsers>}></Route>
+        <Route path="/users" element={<UseGitHubUsers></UseGitHubUsers>}></Route>
       </Routes>
     </>
   );

@@ -4,6 +4,11 @@ import { incrementCounter } from './state/CounterReducer'
 import {store} from './state/Store'
 import {add, remove, edit} from './state/TodosReducer'
 
+
+store.subscribe(() => {
+    console.log(store.getState())
+})
+
 store.dispatch(incrementCounter(10))
 
 store.dispatch(add({id: 1, title: 'FRONTEND', completed: true}))
